@@ -1,0 +1,902 @@
+@font-face {
+	font-family: "fontawesome";
+	src: url("fonts/fontawesome-webfont.ttf") format('truetype'),
+		 url("fonts/fontawesome-webfont.eot") format('opentype'),
+		 url("fonts/fontawesome-webfont.woff") format('woff'),
+		 url("fonts/fontawesome-webfont.svg") format('svg');	
+
+}
+
+@font-face {
+	font-family: "robotoRegular";
+	src: url("fonts/Roboto-Regular.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "robotoBlack";
+	src: url("fonts/Roboto-Black.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "robotoThin";
+	src: url("fonts/Roboto-Thin.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "glyphicons";
+	src: url("fonts/glyphicons-halflings-regular.ttf") format('truetype'),
+		 url("fonts/glyphicons-halflings-regular.eot") format('opentype'),
+		 url("fonts/glyphicons-halflings-regular.woff") format('woff'),
+		 url("fonts/glyphicons-halflings-regular.svg") format('svg');	
+}
+
+button:focus {
+	outline:0;
+}
+
+@media all {
+
+	html {
+	    overflow: scroll;
+	    overflow-x: hidden;
+	}
+
+	::-webkit-scrollbar {
+	    width: 0px;
+	    background: transparent;  
+	}
+
+	::-webkit-scrollbar-thumb {
+	    background: #FF0000;
+	}
+
+	body {
+		
+		margin: 0;
+		padding: 0;
+	}
+
+	p {
+		font-family: robotoRegular, Arial, Serif;
+	}
+
+	h2 {
+		font-family: robotoBlack;
+		margin: 0;
+		font-size: 2.5em;
+		color: #272727;
+	}
+
+	header p {
+		margin: 0;
+	}
+
+	header {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#page {
+		width: 100%;
+		background-color: white;
+	}
+
+	footer {
+		width: 100%;
+	}
+
+	.Marge {
+		padding: 18px;
+		padding-top: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 15px;
+	}
+	.puceMarge {
+		height: 15px;
+		width: 15px;
+		border-radius: 50%;
+		background-color: #5CADD3;
+	}
+
+	.barMargeR, .barMargeL {
+		margin-left: 5px;
+		width: 50px;
+		height: 1px;
+		background-color: #c7c7c7;
+		margin-right: 5px;
+
+	}
+
+	#anchor1, #anchor2, #anchor3, #anchor4 {
+		display: block;
+		position: relative;
+		top: -200px;
+		visibility: hidden;
+	}
+
+	/*Header*/
+
+	#fixedHeader {
+
+		position: sticky;
+		top: 0;
+		z-index: 99;
+		width: 100%;
+		height: 150px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		background-color: white;
+		border-bottom-style: solid;
+		border-width: 2px;
+		border-color: #5CADD3;
+
+	}
+
+	#buttonGroup {
+		display: flex;
+		justify-content: space-around;
+		height: 100%;
+
+	}
+
+	#buttonGroup  a {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		background-color: white;
+		text-align: center;
+		align-self: center;
+		text-decoration: none;
+		font-size: 1em;
+		color: black;
+		height: 100%;
+		box-sizing: border-box;
+		width: 5.5em;
+		font-family: robotoRegular, Arial, Serif;
+		cursor: pointer;
+	}
+
+	#buttonGroup a:hover {
+
+		border-top-style: solid;
+		border-color: #5CADD3;
+		border-width: 3px;
+	}
+
+	/*Section Accueil*/
+
+	#Accueil {
+		display: flex;
+		position: relative;
+		background-image: url("images/slider/bg1.jpg");	 
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		margin-bottom: 150px;
+		width: 100%;
+		height: 72vh;
+	}
+
+	.sliderText h1 {
+		font-family: robotoBlack;
+		font-size: 2em;
+		color: white;
+	}
+
+	.sliderText p {
+		font-size: 1em;
+		color: white;
+	}
+
+	.infoButton button {
+		width: 100px;
+		height: 40px;
+		background-color: #5CADD3;
+		border-radius: 4px;
+		border-style: none;
+		border-width: 4px;
+		border-color: #4494BB;
+		border-bottom-style: solid;
+		margin: 0;
+		padding: 0;
+		margin-top: 5px;
+		align-self: center;
+		font-family: robotoRegular;
+		font-size: 0.9em;
+		text-align: center;
+		color: white;
+		margin-bottom: 5px;
+		cursor: pointer;
+	}
+
+	#sliderBar {
+		width: 17%;
+		height: 8px;
+		background-color: #5CADD3;
+		position: absolute;
+		bottom: 0;
+		animation: loader 15s;
+		-webkit-animation: loader 15s;
+		animation-iteration-count: infinite;
+	    -webkit-animation-iteration-count: infinite;
+	    transition-timing-function: ease-in;
+	    -webkit-transition-timing-function: ease-in;
+
+	}
+
+	@keyframes loader {
+    	0% {width: 0%;left:0;right:0}
+    	50% { width: 100%;left:0;right:0}
+    	99% { width: 100%;left:0;right:0} 	 
+	}
+
+	@-webkit-keyframes loader {
+    	0% {width: 0%;left:0;right:0}
+    	50% { width: 100%;left:0;right:0} 
+    	99% { width: 100%;left:0;right:0}
+	}
+
+	.sliderText strong {
+		color: #5CADD3;
+	}
+
+	#sliderHoverContent {
+		position: absolute;
+		align-self: center;
+		bottom: 35%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		align-content: center;
+		width: 100%;
+	}
+
+	.sliderText {
+		margin-right: 50%;
+		margin-left: 10%;
+	}
+
+	.sliderButtonL, .sliderButtonR {
+		padding: 0;
+		cursor: pointer;
+	}
+
+	.sliderButtonL {
+		top: 50%;
+		font-family: glyphicons;
+		font-size: 1.5em;
+		font-weight: bold;
+		color: white;
+		border: none;
+		background-color: rgba(0, 0, 0, 0.30);
+		height:60px;
+	    width:30px;
+	    border-radius: 0 90px 90px 0;
+	}
+
+	.sliderButtonR {
+		bottom: 50%;
+		right: 0;
+		color: white;
+		font-family: glyphicons;
+		font-size: 1.5em;
+		font-weight: bold;
+		right: 0%;
+		top: 50%;
+		border: none;
+		background-color: rgba(0, 0, 0, 0.30);
+		height:60px;
+	    width:30px;
+	    border-radius: 90px 0 0 90px;
+	}
+
+	.sliderButtonL:after {
+		content: "<";
+		padding-right: 7px;
+	}
+
+	.sliderButtonR:after {
+		content: ">";
+		padding-left: 7px;
+	}
+
+	/*Section Services*/
+
+	#Services {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin-bottom: 200px;
+		text-align: center;
+		margin-top: 50px;
+	}
+
+	.asideImg {
+		display: flex;
+		flex: 1 1 auto;
+
+	}
+	.asideImg img {
+		margin-right: 100px;
+		margin-left: 200px;
+		min-width: 200px;
+		min-height: 100px;
+		max-width: 800px;
+		max-height: 400px;
+	}
+
+	#serviceContent {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+		margin-top: 100px;
+	}
+
+	#serviceList {
+		flex: 0.5 1 auto;
+		padding: 0;
+		word-wrap: break-word;
+		text-align: left;
+		list-style: none;
+		width: 50%;
+	}
+
+	#serviceList p {
+		line-height: 30px;
+	}
+
+	#serviceList li {
+		position: relative;
+		margin-bottom: 75px;
+	}
+
+	#serviceContent i {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		left: -100px;
+		font-size: 2em;
+		line-height: 2.2;
+		color: #5CADD3;
+		width: 70px;
+		height: 70px;
+		border-style: solid;
+		border-radius: 50%;
+		border-width: 1px;
+		border-color: #a3a3a3;
+	}
+
+	#serviceContent article {
+		display: flex;
+	}
+
+	.orb {
+		position: absolute;
+		left: -35px;
+		top: 32px;
+		z-index: 1;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: #5CADD3;
+	}
+
+
+	h3 {
+		font-family: robotoRegular;
+		font-size: 1.4em;
+	}
+
+	/*Section Portfolio*/
+
+	#Portfolio {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		width: 100%;
+		padding-bottom: 200px;
+	}
+
+	#Portfolio header {
+		text-align: center;
+	}
+
+	#portfolioMenu {
+		line-height: 3;
+		font-size: 0.9em;
+		display: flex;
+		align-self: center;
+		align-items: center;
+		justify-content: space-between;
+		font-family: robotoRegular;
+		margin-top: 50px;
+		height: 55px;
+		border-radius: 7px;
+		background-color: #E5E5E5;
+		margin-bottom: 50px;
+	}
+
+	.menuRadio {
+		display: none;
+	}
+
+	.radioLabel {
+		cursor: pointer;
+		width: 100px;
+		height: 50px;
+		text-align: center;
+		align-self: center;
+	}
+
+	.menuRadio:checked + .radioLabel {
+		background-color: #5CADD3;
+		border-bottom-style: solid;
+		border-color: #468CAD;
+		border-width: 5px;
+		height: 50px;
+		color: white;
+		line-height: 3.2;
+	}
+
+	.menuRadio:checked + .radioLabel:after {
+		margin-right: -25px;
+		content: "";
+		border-style: solid;
+		position: relative;
+		top: 50px;
+		right: 40px;
+		border-width: 10px 12.5px 0 12.5px;
+		border-color: #468CAD transparent transparent transparent;
+		line-height: 3.2;
+
+	}
+
+
+	.radioLabel:first-of-type {
+		border-top-left-radius: 7px;
+		border-bottom-left-radius: 7px;
+	}
+
+	.radioLabel:last-of-type {
+		border-top-right-radius: 7px;
+		border-bottom-right-radius: 7px;
+	}
+
+	#portfolioImages {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-self: center;
+		flex-wrap: wrap;
+		
+	}
+
+	#portfolioImages img {
+		width: 400px;
+		height: 250px;
+	}
+
+	figure {
+		position: relative;
+
+	}
+	figure:not(:hover) figcaption {
+		display: none;
+	}
+
+	figure:hover figcaption {
+		background-color: rgb(10, 10, 10, 0.40);
+		position: absolute;
+		margin-top: -94px;
+		width: 100%;
+		height: 90px;
+	}
+
+	figcaption h4, figcaption p {
+		font-family: robotoRegular;
+		color: white;
+		padding: 0;
+		margin: 0;
+		margin-left: 15px;
+		margin-top: 5px;
+		justify-content: flex-end;
+		
+	}
+
+	figcaption h4 {
+		margin-top: 20px;
+	}
+
+	figcaption a, figcaption i {
+		display: flex;
+		align-self: center;
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin-top: -30px;
+		margin-right: 5px;
+		
+	}
+
+	figcaption i {
+		margin-top: 10px;
+		font-size: 1.1em;
+		color: white;
+		text-align: center;
+		background-color: #5CADD3;
+		width: 45px;
+		height: 45px;
+		border-style: solid;
+		border-radius: 50%;
+		border-width: 2px;
+		border-color: white;
+	}
+
+	figcaption i::before {
+		position: absolute;
+		bottom: 14px;
+		right: 13px;
+	}
+	/*Section Contact*/
+
+	#Contact section {
+		text-align: center;
+		
+	}
+
+	#Contact section p {
+		font-size: 1em;
+	}
+
+	#map {
+		margin-top: 50px;
+		width: 100%;
+		position: relative;
+		right: 0px;
+		align-items: flex-end;
+	}
+
+	.formContainer {
+		display: flex;
+		position: relative;
+		z-index: 3;
+		justify-content: flex-end;
+		align-items: center;
+		width: 100%;
+
+	}
+
+	#map form {
+
+		font-family: robotoRegular;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: relative;
+		align-self: center;
+		z-index: 3;
+		width: 25%;
+		background-color: rgba(240, 245, 247, 0.85);
+		padding: 0;
+		margin: 0;
+		margin-bottom: 75px;
+		margin-top: 100px;
+		margin-right: 100px;
+		padding-left: 40px;
+	}
+
+	iframe {
+		position: absolute;
+		bottom: 0;
+		z-index: 0;
+		border: none;
+		width: 100%;
+		height: 857px;
+	}
+
+	form h4, form p, form h3 {
+		padding: 0;
+		margin: 0;
+		margin-bottom: 20px;
+		
+	}
+
+	form h3 {
+		font-family: robotoBlack;
+		margin-top: 20px;
+	}
+
+	form input, form textarea {
+		
+		font-family: robotoRegular;
+		width: 80%;
+		padding: 10px;
+		margin: 10px;
+		margin-left: 0;
+	}
+
+	form textarea {
+		height: 200px;
+	}
+
+	form button {
+		
+		font-family: robotoRegular;
+		font-weight: bold;
+		color: white;
+		width: 150px;
+		height: 40px;
+		background-color: #5CADD3;
+		border: none;
+		margin-bottom: 20px;
+		margin-top: 5px;
+		border-bottom-style: solid;
+		border-width: 5px;
+		border-color: #4494BB;
+		border-radius: 3px;
+	}
+
+	#mapOverlay {
+		z-index: 1;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 857px;
+		background-color: rgba(92, 173, 211, 0.30);
+	}
+
+}
+
+@media all and (max-width: 1100px) 
+{
+	#fixedHeader {
+		width: 100%;
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 25px;
+	}
+
+	#buttonGroup a, #buttonGroup a:hover {
+		border: none;
+	}
+
+	#Accueil {
+		padding-top: 90px;
+		height: 350px;
+		justify-content: center;
+		background-image: url("images/slider/bg1.jpg");
+		background-position: center;
+		
+	}
+
+	#sliderHoverContent {
+		position: relative;
+		margin-top: 150px;
+		width: 600px;
+		height: 300px;
+		align-self: center;
+		display: inline-flex;
+		justify-content: center;
+	}
+
+	.sliderText h1, .sliderText p {
+		color: white;	
+	}
+
+	.infoButton button {
+		display: inline-block;
+	}
+
+	#sliderBar {
+		display: none;
+	}
+
+	.sliderText {
+		align-items: center;
+		text-align: center;
+		margin: 0;
+	}
+
+	.sliderButtonL, .sliderButtonR {
+		padding: 0;
+		cursor: pointer;
+	}
+
+	.sliderButtonL, .sliderButtonR, .sliderButtonL:after, .sliderButtonR:after {
+		display: none;
+	}
+
+	/*Services*/
+
+	.asideImg {
+		width: 100%;
+	}
+
+	#serviceContent {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	#serviceList {
+		display: inline-flex;
+		flex-direction: column;
+		align-self: center;
+		width: 50%;
+		text-align: left;
+		margin-left: 200px;
+	}
+
+	#map form {
+		width: 400px;
+	}
+}
+
+@media all and (max-width: 750px) 
+{
+	#fixedHeader {
+		position: relative;
+	}
+
+	section {
+		justify-content: flex-start;
+	}
+
+	h2 {
+		margin-bottom: 25px;
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	h2, header p {
+		text-align: center;
+		word-wrap: break-word;	
+	}
+
+	#Services header, #Portfolio header, #Contact header {
+		align-self: center;
+		width: 80%;
+		word-wrap: break-word;
+		text-align: center;
+	}
+
+	#fixedHeader a {
+		text-align: center;
+	}
+
+	#buttonGroup a {
+		width: 4.5em;
+	}
+
+	/*Accueil*/
+
+	#Accueil {
+		align-content: flex-start;
+		width: 100%;
+		background: none;
+		background-color: #5CADD3;
+	}
+
+	#sliderHoverContent {
+		display: inline-flex;
+		text-align: center;
+		width: 100%;
+		border-left: none;
+		border-right: none;
+		position: absolute;
+		left: 0px;
+		bottom: 72px;
+	}
+
+	#sliderHoverContent h1, #sliderHoverContent p {
+		text-align: center;
+		color: black;
+	}
+
+	#sliderHoverContent strong {
+		color: white;
+	}
+
+
+	.sliderText {
+		
+		width: 100%;
+		position: absolute;
+		text-align: center;
+	}
+
+	.infoButton button {
+		display: none;
+	}
+
+	/*Services*/
+
+	#Services {
+		margin-bottom: 0;
+	}
+
+	.asideImg img {
+		margin: 0;
+		margin-bottom: 50px;
+		align-items: flex-start;
+	}
+	#serviceList {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		width: 100%;
+		align-self: center;
+	}
+
+	#serviceList  li {
+		text-align: center;
+		width: 100%;
+	}
+
+	li p, li h3{
+		margin-top: 50px;
+		word-wrap: break-word;
+	}
+
+	.icon {
+		position: relative;
+		display: inline-flex;
+		left: 70px;
+		height: 10px;
+	}
+
+	.icon i, .orb {
+		align-self: center;
+	}
+
+	.orb {
+		position: relative;
+		top: 5px;
+	}
+
+
+
+	/*Portfolio*/
+
+	#portfolioImages {
+		margin-top: 50px;
+		min-width: 0px;
+	}
+
+	#portfolioImages img {
+		width: 300px;
+		height: 200px;
+		align-self: flex-start;
+		
+	}
+
+	#portfolioMenu {
+		display: none;
+	}
+
+	/*Contact*/
+
+	iframe, #mapOverlay {
+		display: none;
+
+	}
+
+	#map form {
+		position: relative;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	form input, form h4, form p, form h3, form button, form textarea {
+		margin-left: 20px;
+	}
+}
+
